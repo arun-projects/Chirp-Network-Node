@@ -5,17 +5,14 @@
     "dialect": "sqlite"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "database": "chirp",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "sqlite"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "database": "chirp",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "use_env_variable": "DATABASE_URL"
   }
 }
