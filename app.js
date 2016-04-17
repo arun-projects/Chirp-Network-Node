@@ -21,6 +21,10 @@ app.use(bodyParser.urlencoded({
 
 app.use(methodOverride("_method"));
 
+app.get("/", function(req, res) {
+    res.redirect(301, "/chirps");
+});
+
 //Get all chirps
 
 //Create new chirp
