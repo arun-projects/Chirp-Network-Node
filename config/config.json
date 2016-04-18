@@ -11,8 +11,9 @@
   },
   "production": {
     "database": "chirp",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
+    "dialect": "postgres",
+    "username": "root",
+    "password": null,
     "use_env_variable": "DATABASE_URL"
   }
 }
