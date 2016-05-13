@@ -26,13 +26,50 @@ app.get("/", function(req, res) {
 });
 
 //Get all chirps
+app.get("/chirps", function(req, res) {
+    models.Chirp.findAll().then(function(chirps) {
+        res.render("index", {
+            chirps: chirps
+        });
+    });
+});
 
 //Create new chirp
+app.post("/chirps", function(req, res) {
+    models.Chirp.create({
+        chirp: req.body.chirp
+    }).then(function() {
+        res.redirect("/chirps");
+    });
+});
 
 //Get specific chirp
+app.get("/chirps/:id/edit", function(req, res) {
+    models.Chirp.findById(req.params.id).then(function(chirp) {
+        res.render("edit", {
+            chirp: chirp
+        });
+    });
+});
 
 //Edit a chirp
+app.put("/chirps/:id", function(req, res) {
+    models.Chirp.findById(req.params.id).then(function(chirp) {
+        chirp.updateAttributes({
+            chirp: req.body.chirp
+        }).then(function() {
+            res.redirect("/chirps");
+        });
+    });
+});
 
 //Delete a chirp
+app.delete("/chirps/:id", function(req, res) {
+    models.Chirp.findById(req.params.id).then(function(chirp) {
+        chirp.destroy().then(function() {
+            res.redirect("/chirps");
+        });
+    });
+});
 
 app.listen(process.env.PORT || 3000);
