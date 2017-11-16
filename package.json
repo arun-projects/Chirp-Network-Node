@@ -4,7 +4,8 @@
   "description": "Chirp social network built with Node",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm install && ./node_modules/sequelize-cli/lib/sequelize db:migrate && node ./node_modules/nodemon/bin/nodemon.js"
   },
   "author": "Arun Sood",
   "license": "ISC",
@@ -17,5 +18,9 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.3.1",
     "sqlite3": "^3.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "sequelize-cli": "^3.0.0"
   }
 }

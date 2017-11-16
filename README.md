@@ -10,33 +10,7 @@
 ##### Install software dependencies (make sure you are in the project directory):
 
 ```bash
-npm install
-```
-
-##### Install Sequelize-CLI:
-
-Sequelize command line tools:
-
-```bash
-sudo npm install sequelize-cli -g
-```
-
-##### Install Nodemon, our development server:
-
-```bash
-sudo npm install nodemon -g
-```
-
-##### Migrate development database:
-
-```bash
-sequelize db:migrate
-```
-
-##### Run the development server:
-
-```bash
-nodemon
+npm start
 ```
 
 > Now you should be able to visit your site at http://localhost:3000
